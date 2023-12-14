@@ -1,0 +1,41 @@
+{
+    "welcome_message": "☆☆☆☆☆☆☆☆☆☆☆☆☆☆Welcome to the Eyes of Databricks - A LLM Powered multimedia processing engine☆☆☆☆☆☆☆☆☆☆☆☆☆☆",
+    "properties": {
+        "project_name": {
+            "type": "string",
+            "default": "project_name",
+            "description": "Project Name",
+            "order": 1
+        },
+        "external_model_endpoint_name": {
+            "type": "string",
+            "default": "open_ai_endpoint",
+            "description": "Name of your Open AI External Model Endpoint",
+            "order": 2
+        },
+        "open_ai_secret_key": {
+            "type": "string",
+            "default": "{{`{{secrets/scope/key}}`}}",
+            "description": "Open AI Secret Key Location",
+            "order": 3
+        },
+        "volume_path": {
+            "type": "string",
+            "default": "/Volumes/test/default/test_volume",
+            "description": "The path of the volume to be monitored",
+            "order": 4
+        },
+        "first_prompt": {
+            "type": "string",
+            "default": "Describe the Image",
+            "description": "First Prompt for the Files",
+            "order": 5
+        },
+        "second_prompt": {
+            "type": "string",
+            "default": "Are there cats in the image? Reply with only a single character 'Y' or 'N'",
+            "description": "Second Prompt for the Files",
+            "order": 6
+        }
+    }
+}
