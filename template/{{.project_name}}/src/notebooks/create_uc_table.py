@@ -99,7 +99,7 @@ def create_volume_info_table(volume_path: str, image_prompt_1: str, image_prompt
 #           },                              
 #       ],
 #   }
-  data = f"CREATE TABLE {catalog_name}.{schema_name}.{table_name} (" + \
+  data = f"CREATE TABLE IF NOT EXISTS {catalog_name}.{schema_name}.{table_name} (" + \
     "file_name VARCHAR(255)," + \
     "file_type VARCHAR(255)," + \
     "audio_transcriptions VARCHAR(255)," + \
