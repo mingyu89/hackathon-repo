@@ -1,19 +1,10 @@
-new_cluster: &new_cluster
-  new_cluster:
-    num_workers: 3
-    spark_version: 13.3.x-cpu-ml-scala2.12
-    node_type_id: i3.xlarge
-
 resources:
   jobs:
     {{.project_name}}_job:
-        name: {{.project_name}}_job
-        job_clusters:
-          - job_cluster_key: volume_monitoring_cluster
-            <<: *new_cluster
+        name: {{.project_name}}_hackathon_job
         tasks:
           - task_key: volume_monitor_task
-            job_cluster_key: volume_monitoring_cluster
+            existing_cluster_id: "0704-124501-tsc2fxq"
             notebook_task:
                 notebook_path: ../src/notebooks/hackathon.py
         continuous:
