@@ -31,26 +31,26 @@ from mlflow.deployments import get_deploy_client
 try:
     client = get_deploy_client("databricks")
     try:
-    endpoint = client.get_endpoint(endpoint_name)
+        endpoint = client.get_endpoint(endpoint_name)
     except:
-    endpoint = client.create_endpoint(
-        name="chat",
-        config={
-            "served_entities": [
-                {
-                    "name": "test",
-                    "external_model": {
-                        "name": "gpt-4-vision-preview",
-                        "provider": "openai",
-                        "task": "llm/v1/chat",
-                        "openai_config": {
-                            "openai_api_key": open_ai_secret_key_reference,
+        endpoint = client.create_endpoint(
+            name="chat",
+            config={
+                "served_entities": [
+                    {
+                        "name": "test",
+                        "external_model": {
+                            "name": "gpt-4-vision-preview",
+                            "provider": "openai",
+                            "task": "llm/v1/chat",
+                            "openai_config": {
+                                "openai_api_key": open_ai_secret_key_reference,
+                            },
                         },
-                    },
-                }
-            ],
-        },
-    )
+                    }
+                ],
+            },
+        )
 except:
     pass
 
