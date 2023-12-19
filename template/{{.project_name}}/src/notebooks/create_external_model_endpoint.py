@@ -1,12 +1,4 @@
 # Databricks notebook source
-# MAGIC %pip install mlflow
-
-# COMMAND ----------
-
-dbutils.library.restartPython()
-
-# COMMAND ----------
-
 dbutils.widgets.text(
     "open_ai_secret_key_reference",
     "{{secrets/<scope>/<key>}}",
